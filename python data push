@@ -1,0 +1,14 @@
+import pyrebase
+
+Config  =  {
+    sdk code of your web app
+    
+    }
+
+firebase =pyrebase.initialize_app(Config)
+
+db=firebase.database()
+
+#push data
+data={"humidity":[["date:29/06/2021","+data:80","+time:1.35"],["date:29/06/2021","+data:80","+time:1.36"],["date:29/06/2021","+data:80","+time:1.37"],["date:29/06/2021","+data:80","+time:1.38"]],"temperature data":[["date:29/06/2021","+data:37","+time:1.35"],["date:29/06/2021","+data:37","+time:1.37"],["date:29/06/2021","+data:38","+time:1.37"],["date:29/06/2021","+data:38","+time:1.38"]]}
+db.push(data)
