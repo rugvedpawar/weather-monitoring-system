@@ -1,0 +1,66 @@
+
+<!DOCTYPE html>
+<html>
+
+    <body style="background-color:lavender;">
+    <h1 style="color:darkblue;"> Sensor Data Plotting </h1>
+    
+    <form>
+
+
+</form>
+<h3 style="color:green;">temperature Data</h3>
+<form>
+    <label for="day">Please select the date </label>
+    <input type="date" id="day" name="Selected date"> 
+    <button style="background-color:mediumseagreen;" name="data" type="submit" value="plot data">Plot Data</button>
+    </form>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+<body>
+<canvas id="myChart" style="width:100%;max-width:600px"></canvas>
+
+<script>
+var xValues = [1.35,1.36,1.37,1.38];
+var yValues = [36,36,37,36];
+
+new Chart("myChart", {
+  type: "line",
+  data: {
+    labels: xValues,
+    datasets: [{
+      fill: false,
+      lineTension: 0,
+      backgroundColor: "rgba(100,10,10,1.0)",
+      borderColor: "rgba(100,50,10,0.5)",
+      data: yValues
+    }]
+  },
+  options: {
+    legend: {display: false,},
+    scales: {
+      yAxes: [{ticks: {min: 0, max:100}}],
+    }
+  },
+  options: {
+            scales: {
+              xAxes: [{ 
+                scaleLabel: {
+                  display: true,
+                  labelString: 'time'
+                }
+              }],
+              yAxes: [{
+                scaleLabel: {
+                  display: true,
+                  labelString: 'temperature'
+                }
+              }],
+            }
+          },
+});
+</script>
+
+</body>
+</html>
+</body>
+</html>
